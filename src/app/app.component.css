@@ -1,0 +1,17 @@
+html {
+    background-color: #ecf0f5;
+  }
+  
+  span.logo-lg {
+    font-size: 18px !important;
+  }
+  
+  .main-footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+  }
+  
+  #toast-container {
+    top: 70px;
+  }
