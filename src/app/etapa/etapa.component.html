@@ -1,11 +1,31 @@
-<title>{{ title }}</title>
-<body class="skin-blue fixed sidebar-mini">
-    <div class="wrapper">
-        <header class="main-header" ng-include="'/template/header.html'"></header>
-        <aside class="main-sidebar" ng-include="'/template/menu.html'"></aside>
-        <div class="content-wrapper" ui-view></div>
-        <footer class="main-footer" ng-include="'/template/footer.html'"></footer>
-    </div>
-    <script src="/assets/js/deps.min.js"></script>
-    <script src="/assets/js/app.min.js"></script>
-</body>
+<h2>Gerenciamento da Etapa</h2>
+<hr>
+<h3>Jogadores</h3>
+<div>
+    <label>Nome:
+        <input #nome placeholder="nome"/>
+    </label><br>
+    <label>Idade:
+        <input #idade placeholder="idade"/>
+    </label><br>
+    <label>Apelido:
+        <input #apelido placeholder="apelido"/>
+    </label><br>
+    <label>Apartamento:
+        <input #ap placeholder="ap e bloco"/>
+    </label><br>
+
+    <button (click)="add(nome.value,idade.value,apelido.value,ap.value); nome.value=''; idade.value=''; apelido.value=''; ap.value=''">
+        Incluir
+    </button>
+</div>
+<div class="grid grid-pad" *ngIf="jogadores">
+    <a *ngFor="let j of jogadores" class="col-1-4"
+        routerLink="/detalhe/{{jogador.id}}">
+        <div class="module jogador">
+        <h4>{{jogador.nome}}</h4>
+        </div>
+    </a>
+    <button class="delete" title="Excluir" (click)="delete(hero)">x</button>
+</div>
+<app-jogador-search></app-jogador-search>

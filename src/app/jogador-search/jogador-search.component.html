@@ -1,0 +1,13 @@
+<div id="search-component">
+  <h4>Buscar Jogador</h4>
+
+  <input #searchBox id="search-box" (keyup)="buscar(searchBox.value)" />
+
+  <ul class="search-result">
+    <li *ngFor="let j of jogadores$ | async" >
+      <a routerLink="/detalhe/{{j.id}}">
+        {{j.name}}
+      </a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,7 @@
+<div *ngFor='let message of messageService.messages' >
+  <div class="alert alert-primary" role="alert">      
+    <button type="button" class="close" aria-label="Close" (click)="messageService.clear()">
+        {{message}} <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</div>

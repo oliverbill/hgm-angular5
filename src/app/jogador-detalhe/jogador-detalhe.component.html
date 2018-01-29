@@ -1,0 +1,30 @@
+<div>
+
+  <div *ngIf="jogador">
+    <h2>{{ jogador.nome | uppercase }}</h2>
+    <div><span>id: </span>{{jogador.id}}</div>
+    
+    <div>
+      <label>Id:
+        <input [(ngModel)]="jogador.id" placeholder="nome" readonly/>
+      </label>
+      <label>Nome:
+        <input [(ngModel)]="jogador.nome" placeholder="nome"/>
+      </label>
+      <label>Idade:
+        <input [(ngModel)]="jogador.idade" placeholder="idade"/>
+      </label>
+      <label>Apelido:
+        <input [(ngModel)]="jogador.apelido" placeholder="apelido"/>
+      </label>
+      <label>Apartamento:
+        <input [(ngModel)]="jogador.apartamentoBloco" placeholder="ap e bloco"/>
+      </label>    
+
+      <button (click)="salvar()">Salvar Alteração</button>
+    </div>
+  </div>
+  
+  <br>
+  <button (click)="voltar()">Voltar</button>
+</div>

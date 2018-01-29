@@ -1,3 +1,8 @@
-<p>
-  jogador works!
-</p>
+<h3>Jogadores</h3>
+<ul class="jogadores">
+  <li *ngFor="let j of jogadores">
+    <a routerLink="/jogadores/{{j.apelido}}">
+      <span class="badge">{{j.apelido}}</span>{{j.nome}}
+    </a>
+  </li>
+</ul>
